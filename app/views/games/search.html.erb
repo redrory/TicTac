@@ -1,2 +1,76 @@
-<h1>Games#search</h1>
-<p>Find me in app/views/games/search.html.erb</p>
+<div class="container">
+  <h1>Hello Tic-Tac-Toe</h1>
+  <h3><%= @current.name %></h3>
+  Your <%= @player.name %>
+
+  <div class="row">
+    <div class="col-md-4">
+
+    <%= form_tag games_search_path, method: 'get' do %>
+
+      <p>
+        Name
+        <%= text_field_tag :player_name %>
+      </p>
+
+      <p>
+        Game
+        <%= text_field_tag :search, params[:search] %>
+      </p>
+
+      <p>
+        <%= submit_tag ("Refresh") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="col-md-6">
+    <table class="table">
+      <tr>
+        <th></th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+      </tr>
+
+      <tr>
+        <th>1</th>
+
+        <th><%= @current.owner_id == @player.id ? selection(@current.a1, "a1") : o_selection(@current.a1, "a1")  %></th>
+        <th><%= @current.owner_id == @player.id ? selection(@current.a2, "a2") : o_selection(@current.a2, "a2")  %></th>
+        <th><%= @current.owner_id == @player.id ? selection(@current.a3, "a3") : o_selection(@current.a3, "a3") %></th>
+      </tr>
+
+      <tr>
+        <th>2</th>
+        <th><%= @current.owner_id == @player.id ? selection(@current.b1, "b1") : o_selection(@current.b1, "b1") %></th>
+        <th><%= @current.owner_id == @player.id ? selection(@current.b2, "b2") : o_selection(@current.b2, "b2") %></th>
+        <th><%= @current.owner_id == @player.id ? selection(@current.b2, "b3") : o_selection(@current.b3, "b3") %></th>
+      </tr>
+
+      <tr>
+        <th>3</th>
+        <th><%= @current.owner_id == @player.id ? selection(@current.c1, "c1") : o_selection(@current.c1, "c1") %></th>
+        <th><%= @current.owner_id == @player.id ? selection(@current.c2, "c2") : o_selection(@current.c2, "c2") %></th>
+        <th><%= @current.owner_id == @player.id ? selection(@current.c3, "c3") : o_selection(@current.c3, "c3") %></th>
+      </tr>
+    </table>
+
+  </div>
+
+  </div> <!-- /Row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> <!-- /Container -->

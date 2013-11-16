@@ -6,6 +6,11 @@ Tictac::Application.routes.draw do
 
   get "games/show"
 
-   root :to => 'games#index'
+  get "games/make_move"
+
+  resources :games
+
+
+  root :to => 'games#index'
 
 end

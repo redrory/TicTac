@@ -4,16 +4,16 @@
   <div class="row">
     <div class="col-md-4">
 
-    <%= form_tag root_url, method: 'get' do %>
+    <%= form_tag games_search_path, method: 'get' do %>
 
       <p>
         Name
-        <%= text_field :player_name , placeholder: "Enter your name" %>
+        <%= text_field_tag :player_name, params[:player_name] %>
       </p>
 
       <p>
         Game
-        <%= text_field :game_name, placeholder: "Enter your name of your game" %>
+        <%= text_field_tag :search, params[:search] %>
       </p>
 
       <p>
