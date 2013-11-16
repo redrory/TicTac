@@ -3,6 +3,7 @@ class GamesController < ApplicationController
   end
 
   def search
+    @current = Game.find_by_name(params[:search])
   end
 
   def show
