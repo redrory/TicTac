@@ -1,0 +1,73 @@
+<div class="container">
+  <h1>Hello Tic-Tac-Toe</h1>
+
+  <div class="row">
+    <div class="col-md-4">
+
+    <%= form_tag root_url, method: 'get' do %>
+
+      <p>
+        Name
+        <%= text_field :player_name , placeholder: "Enter your name" %>
+      </p>
+
+      <p>
+        Game
+        <%= text_field :game_name, placeholder: "Enter your name of your game" %>
+      </p>
+
+      <p>
+        <%= submit_tag ("Refresh") %>
+      </p>
+    <% end %>
+  </div>
+
+  <div class="col-md-6">
+    <table class="table">
+      <tr>
+        <th></th>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+      </tr>
+
+      <tr>
+        <th>1</th>
+        <th>X</th>
+        <th>X</th>
+        <th>X</th>
+      </tr>
+
+      <tr>
+        <th>2</th>
+        <th>X</th>
+        <th>X</th>
+        <th>X</th>
+      </tr>
+
+      <tr>
+        <th>3</th>
+        <th>X</th>
+        <th>X</th>
+        <th>X</th>
+      </tr>
+    </table>
+
+  </div>
+
+  </div> <!-- /Row -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> <!-- /Container -->
