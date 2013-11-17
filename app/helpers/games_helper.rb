@@ -16,4 +16,10 @@ module GamesHelper
     end
   end
 
+
+  def broadcast(channel, &block)
+    message = {:channel => channel, :data => capture(&block) }
+    uri = URI.parse("http://localhost:9292/faye")
+    NET::HTTP.post_form(uri, :message => message.to_json)
+  end
 end
