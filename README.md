@@ -6,6 +6,6 @@ Demo:
 
 Notes
 
-1.) Installed faye gem, to enable usage with database interaction that difficulties implementing correctly.
-2.) Posting via JS, for initial game creation also have difficulties
+1.) Installed faye gem, to enable usage without database interaction however had difficulties implementing correctly.
+2.) Posting via JS, for initial game creation also gave difficulties
 
