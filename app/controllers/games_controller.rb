@@ -5,6 +5,8 @@ class GamesController < ApplicationController
   def create
     @game = Game.new(params[:game])
     @game.save
+
+    redirect_to :back
   end
 
   def search

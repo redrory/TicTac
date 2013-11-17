@@ -13,3 +13,27 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$(function() {
+  var faye = new Faye.Client('http://localhost:9292/faye');
+  faye.subscribe("/games/index", function(data) {
+    //eval(data);
+    alert(data);
+  });
+});
+
+$(function() {
+    // Add click event binding to `Save search` link
+    $("#name_save").on("click", function(event) {
+
+
+        // get the value inside the text field
+        var name = $("#player_name").val();
+        alert(name);
+
+
+        $.post('/games', { name: name }, function(data) {
+            // log the result from the server, or whatever...
+            console.log(data);
+        });
+    });
+});
