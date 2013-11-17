@@ -35,7 +35,7 @@
 
       <tr>
         <th>1</th>
-
+        <!-- Toggle between users, because on owner of game -->
         <th><%= @current.owner_id == @player.id ? selection(@current.a1, "a1") : o_selection(@current.a1, "a1")  %></th>
         <th><%= @current.owner_id == @player.id ? selection(@current.a2, "a2") : o_selection(@current.a2, "a2")  %></th>
         <th><%= @current.owner_id == @player.id ? selection(@current.a3, "a3") : o_selection(@current.a3, "a3") %></th>

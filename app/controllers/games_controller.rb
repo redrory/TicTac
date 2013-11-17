@@ -10,17 +10,17 @@ class GamesController < ApplicationController
   end
 
   def search
+    #find correct session
     @current = Game.find_by_name(params[:search])
     @player = Player.find_by_name(params[:player_name])
-    #render text: params[:search].inspect
   end
 
   def make_move
     @game = Game.find_by_name(params[:name])
     params[:loc].parameterize.underscore.to_sym
-    #@game.update_attributes(params[:loc].parameterize.underscore.to_sym  => params[:a1])
+    @game.update_attributes(params[:loc].parameterize.underscore.to_sym  => params[:a1])
 
-    check_win(@game)
+    #check_win(@game)
 
     redirect_to :back
   end
